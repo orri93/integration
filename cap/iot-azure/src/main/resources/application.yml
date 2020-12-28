@@ -1,0 +1,31 @@
+gos:
+  iotdht:
+    topic: iot.dht
+    queues:
+      local: iot.dht.local
+      remote: iot.dht.remote
+
+logging:
+  file: ioq-dht-routes.log
+
+spring:
+  profile: general
+
+  activemq:
+    broker-url: tcp://127.0.0.1:61616
+
+  datasource:
+    initialize: true
+    url: jdbc:postgresql://127.0.0.1:5432/iot
+    driverClassName: org.postgresql.Driver
+    username: orri
+    password: Bios93
+
+name: general-profile
+environment: general
+
+camel:
+  springboot:
+    # The Camel context name
+    name: GosActiveMqToPostgrSql
+    mainRunController: true

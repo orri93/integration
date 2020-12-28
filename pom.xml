@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>gos.integration</groupId>
+  <artifactId>integration</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+
+  <name>GOS integration parent</name>
+  <description>GOS integration</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <scm>
+    <connection>
+      scm:git:git@github.com:orri93/integration.git
+    </connection>
+    <!-- url></url -->
+    <tag>main</tag>
+  </scm>
+
+  <modules>
+    <module>cap</module>
+  </modules>
+
+</project>
