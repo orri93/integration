@@ -28,7 +28,7 @@ public class RemoteApplication {
 	}
 	
 	@Component
-	@ConfigurationProperties(prefix = "gos.iotdht")
+	@ConfigurationProperties(prefix = "gos.poca01")
 	class AzureConfiguration extends Configuration {
 	}
 	

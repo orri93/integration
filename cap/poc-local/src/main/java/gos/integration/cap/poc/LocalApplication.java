@@ -30,7 +30,7 @@ public class LocalApplication {
 	}
 	
 	@Component
-	@ConfigurationProperties(prefix = "gos.iotdht")
+	@ConfigurationProperties(prefix = "gos.poca01")
 	class RaspberryPiConfiguration extends Configuration {
 	}
 	
