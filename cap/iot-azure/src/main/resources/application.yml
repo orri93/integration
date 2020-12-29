@@ -1,9 +1,6 @@
 gos:
   iotdht:
-    topic: iot.dht
-    queues:
-      local: iot.dht.local
-      remote: iot.dht.remote
+    from: iot.dht
 
 logging:
   file: ioq-dht-routes.log

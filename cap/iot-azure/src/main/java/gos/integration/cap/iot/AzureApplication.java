@@ -62,7 +62,7 @@ public class AzureApplication {
 
 		@Override
 		public void configure() throws Exception {
-			super.setFrom("activemq:queue:" + configuration.getQueues().getLocal());
+			super.setFrom("activemq:queue:" + configuration.getFrom());
 			super.setProcessor(amq2Psqlprocessor);
 			super.configure();
 		}

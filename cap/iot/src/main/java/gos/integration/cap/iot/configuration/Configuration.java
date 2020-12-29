@@ -1,8 +1,15 @@
 package gos.integration.cap.iot.configuration;
 
 public class Configuration {
+	private String from;
 	private String topic;
 	private Queues queues;
+	public String getFrom() {
+		return from;
+	}
+	public void setFrom(String from) {
+		this.from = from;
+	}
 	public String getTopic() {
 		return topic;
 	}
