@@ -20,6 +20,9 @@
     <module>iot</module>
     <module>iot-rpi</module>
     <module>iot-azure</module>
+    <module>poc</module>
+    <module>poc-local</module>
+    <module>poc-remote</module>
   </modules>
 
   <dependencyManagement>

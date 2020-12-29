@@ -1,0 +1,31 @@
+gos:
+  poca01:
+    topic: poc.a01
+    queues:
+      local: poc.a01.local
+      remote: poc.a01.remote
+
+logging:
+  file: poc-a01-routes.log
+
+spring:
+  profile: general
+
+  activemq:
+    broker-url: tcp://127.0.0.1:61616
+
+  datasource:
+    initialize: true
+    url: jdbc:postgresql://127.0.0.1:5432/poc
+    driverClassName: org.postgresql.Driver
+    username: orri
+    password: Bios93
+
+name: general-profile
+environment: general
+
+camel:
+  springboot:
+    # The Camel context name
+    name: GosActiveMqToPostgrSql
+    mainRunController: true
