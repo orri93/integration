@@ -17,7 +17,8 @@ public class JsonToSqlProcessor implements Processor {
 	static final String Dht11 = "dht11";
 	static final String TS = "ts";
 	static final String RH = "RH";
-	static final String AT = "t";
+	static final String AT = "at";
+	static final String ST = "t";
 	static final String T = "T";
 
   private DateFormat sdf;
@@ -40,6 +41,9 @@ public class JsonToSqlProcessor implements Processor {
 				Long ts = in.getHeader(JMSTimestamp, -1L, Long.class);
 				Date tsd = new Date(ts);
 				tss = sdf.format(tsd);
+			}
+			if(map.containsKey(ST)) {
+				at = (Double)map.get(ST);
 			}
 			if(map.containsKey(AT)) {
 				at = (Double)map.get(AT);
