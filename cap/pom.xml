@@ -23,6 +23,7 @@
     <module>poc</module>
     <module>poc-local</module>
     <module>poc-remote</module>
+	<module>poc-a02-local</module>
   </modules>
 
   <dependencyManagement>
