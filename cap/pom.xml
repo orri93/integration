@@ -24,6 +24,7 @@
     <module>poc-local</module>
     <module>poc-remote</module>
 	<module>poc-a02-local</module>
+	<module>poc-a03</module>
   </modules>
 
   <dependencyManagement>
@@ -61,6 +62,13 @@
       
       
       <!-- Dependencies -->
+      
+      <!-- Camel Spring boot -->
+      <!-- dependency>
+        <groupId>org.apache.camel.springboot</groupId>
+        <artifactId>camel-timer-starter</artifactId>
+        <version>2.23.0</version>
+      </dependency -->
       
       <!-- JSON -->
       <dependency>

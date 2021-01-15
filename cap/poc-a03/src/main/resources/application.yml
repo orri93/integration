@@ -1,0 +1,59 @@
+gos:
+  poca03:
+    generator:
+      tools:
+        -
+          offset: 10.0
+          range:
+            from: 0.0
+            to: 10.0
+        -
+          offset: 20.0
+          range:
+            from: 10.0
+            to: 20.0
+        -
+          offset: 30.0
+          range:
+            from: 20.0
+            to: 30.0
+        -
+          offset: 40.0
+          range:
+            from: 30.0
+            to: 40.0
+      depth:
+        step: 1.0
+        range:
+          from: 1000.0
+          to: 3000.0
+        noise:
+          sd: 0.1
+      value:
+        step-count: 384
+        noise:
+          sd: 0.1
+    timer:
+      period: 125
+
+logging:
+  file: poc-a03-routes.log
+
+spring:
+  profile: general
+
+  datasource:
+    initialize: true
+    url: jdbc:postgresql://192.168.10.168:5432/poc
+    driverClassName: org.postgresql.Driver
+    username: orri
+    password: Bios93
+
+name: general-profile
+environment: general
+
+camel:
+  springboot:
+    # The Camel context name
+    name: GosIntegrationCapPocA03
+    mainRunController: true
