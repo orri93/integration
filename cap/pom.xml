@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
     http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+
   <!--The identifier of the parent POM -->
   <parent>
     <groupId>gos.integration</groupId>
@@ -23,8 +23,8 @@
     <module>poc</module>
     <module>poc-local</module>
     <module>poc-remote</module>
-	<module>poc-a02-local</module>
-	<module>poc-a03</module>
+    <module>poc-a02-local</module>
+    <module>poc-a03</module>
   </modules>
 
   <dependencyManagement>
@@ -38,19 +38,19 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-framework-bom</artifactId>
         <version>5.1.4.RELEASE</version>
-		<scope>import</scope>
+        <scope>import</scope>
         <type>pom</type>
-      </dependency>    
-    
+      </dependency>
+
       <!-- Spring Boot BOM -->
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <version>2.1.0.RELEASE</version>
-		<scope>import</scope>
+        <scope>import</scope>
         <type>pom</type>
       </dependency>
-      
+
       <!-- Camel BOM -->
       <dependency>
         <groupId>org.apache.camel</groupId>
@@ -59,24 +59,24 @@
         <scope>import</scope>
         <type>pom</type>
       </dependency>
-      
-      
+
+
       <!-- Dependencies -->
-      
+
       <!-- Camel Spring boot -->
       <!-- dependency>
         <groupId>org.apache.camel.springboot</groupId>
         <artifactId>camel-timer-starter</artifactId>
         <version>2.23.0</version>
       </dependency -->
-      
+
       <!-- JSON -->
       <dependency>
         <groupId>org.json</groupId>
         <artifactId>json</artifactId>
         <version>20180813</version>
       </dependency>
-      
+
       <!-- Apache Commons-->
       <dependency>
         <groupId>org.apache.commons</groupId>
@@ -98,7 +98,7 @@
 
     </dependencies>
   </dependencyManagement>
-  
+
   <build>
     <pluginManagement>
       <plugins>
@@ -110,5 +110,5 @@
       </plugins>
     </pluginManagement>
   </build>
-  
+
 </project>
