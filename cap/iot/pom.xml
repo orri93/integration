@@ -17,6 +17,11 @@
   <name>Camel ActiveMQ and PostgreSQL for IoT Integration</name>
   <description>The GOS Camel ActiveMQ and PostgreSQL for IoT Integration</description>
 
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
   <dependencies>
     
     <!-- Camel -->
