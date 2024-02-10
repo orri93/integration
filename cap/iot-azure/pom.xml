@@ -4,7 +4,7 @@
     http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  
+
   <!--The identifier of the parent POM -->
   <parent>
     <groupId>gos.integration</groupId>
@@ -22,14 +22,14 @@
   </properties>
 
   <dependencies>
-  
+
     <!-- GOS Integration -->
     <dependency>
       <groupId>gos.integration</groupId>
       <artifactId>integration-cap-iot</artifactId>
       <version>0.0.1</version>
     </dependency>
-  
+
     <!-- spring -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -52,7 +52,7 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-spring-boot-starter</artifactId>
     </dependency>
-    
+
     <!-- Camel -->
     <dependency>
       <groupId>org.apache.camel</groupId>
@@ -102,8 +102,8 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-dbcp2</artifactId>
     </dependency>
-    
-	<!-- PostgreSQL -->
+
+    <!-- PostgreSQL -->
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>

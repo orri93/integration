@@ -13,8 +13,17 @@
   <description>GOS integration</description>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- Version -->
+    <java.version>1.8</java.version>
+
+    <!-- Project general properties -->
+    <source.encoding>UTF-8</source.encoding>
+
+    <!-- Project inherit properties -->
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <project.build.sourceEncoding>${source.encoding}</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>${source.encoding}</project.reporting.outputEncoding>
   </properties>
 
   <scm>
@@ -27,6 +36,7 @@
 
   <modules>
     <module>cap</module>
+    <module>finance</module>
   </modules>
 
 </project>

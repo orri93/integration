@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!--The identifier of the parent POM -->
+  <parent>
+    <groupId>gos.integration</groupId>
+    <artifactId>integration</artifactId>
+    <version>0.0.1</version>
+  </parent>
+
+  <artifactId>integration-finance</artifactId>
+  <packaging>pom</packaging>
+  <name>GOS Finance integration parent</name>
+  <description>The GOS Finance integration parent</description>
+
+  <modules>
+    <module>poc</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- Spring BOM -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>6.1.3</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+
+      <!-- Camel Spring Boot BOM -->
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-spring-boot-dependencies</artifactId>
+        <version>2.25.4</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+
+      <!-- Camel BOM -->
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-parent</artifactId>
+        <version>4.3.0</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+
+</project>

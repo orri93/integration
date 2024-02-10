@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!--The identifier of the parent POM -->
+  <parent>
+    <groupId>gos.integration</groupId>
+    <artifactId>integration-finance</artifactId>
+    <version>0.0.1</version>
+  </parent>
+
+  <artifactId>integration-finance-poc</artifactId>
+  <packaging>pom</packaging>
+  <name>GOS Finance POC integration parent</name>
+  <description>The GOS Finance POC integration parent</description>
+
+  <modules>
+    <module>poc-file</module>
+  </modules>
+
+</project>

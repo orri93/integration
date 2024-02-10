@@ -1,0 +1,13 @@
+logging:
+  file: finance-poc-file.log
+
+spring:
+  profile: general
+
+name: general-profile
+environment: general
+
+camel:
+  springboot:
+    name: GosFinanceFilePoc
+    mainRunController: true
