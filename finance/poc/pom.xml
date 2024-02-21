@@ -18,6 +18,7 @@
 
   <modules>
     <module>poc-file</module>
+    <module>poc-rest</module>
   </modules>
 
 </project>

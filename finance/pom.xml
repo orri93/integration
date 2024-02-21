@@ -17,11 +17,22 @@
   <description>The GOS Finance integration parent</description>
 
   <modules>
+    <module>fs</module>
+    <module>mli</module>
     <module>poc</module>
   </modules>
 
   <dependencyManagement>
     <dependencies>
+
+      <!-- Spring Boot -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>3.2.2</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
 
       <!-- Camel Spring Boot BOM -->
       <dependency>

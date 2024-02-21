@@ -15,9 +15,12 @@ buildNumber.properties
 .classpath
 .project
 
-# Vsiual Studio Code
+# Visual Studio Code
 .vscode/
 
 # Logging
 *.log
 *.gz
+
+# Data files
+*.csv

@@ -11,21 +11,27 @@
     <version>0.0.1</version>
   </parent>
 
-  <artifactId>integration-finance-poc-file</artifactId>
+  <artifactId>integration-finance-poc-rest</artifactId>
   <packaging>jar</packaging>
-  <name>GOS Finance File POC integration</name>
-  <description>The GOS Finance File POC integration</description>
+  <name>GOS Finance REST POC integration</name>
+  <description>The GOS Finance REST POC integration</description>
 
   <properties>
-    <start-class>gos.integration.finance.poc.file.Application</start-class>
+    <start-class>gos.integration.finance.poc.rest.Application</start-class>
   </properties>
 
   <dependencies>
 
     <!-- Camel Spring Boot Starter-->
     <dependency>
-      <groupId>org.apache.camel.springboot</groupId>
-      <artifactId>camel-spring-boot-starter</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
+      <version>3.1.0</version>
     </dependency>
 
   </dependencies>

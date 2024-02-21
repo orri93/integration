@@ -7,17 +7,17 @@
   <!--The identifier of the parent POM -->
   <parent>
     <groupId>gos.integration</groupId>
-    <artifactId>integration-finance-poc</artifactId>
+    <artifactId>integration-finance</artifactId>
     <version>0.0.1</version>
   </parent>
 
-  <artifactId>integration-finance-poc-file</artifactId>
+  <artifactId>integration-finance-mli</artifactId>
   <packaging>jar</packaging>
-  <name>GOS Finance File POC integration</name>
-  <description>The GOS Finance File POC integration</description>
+  <name>GOS Finance Merrill Lynch integration</name>
+  <description>The GOS Finance Merrill Lynch integration</description>
 
   <properties>
-    <start-class>gos.integration.finance.poc.file.Application</start-class>
+    <start-class>gos.integration.finance.mli.Application</start-class>
   </properties>
 
   <dependencies>
@@ -26,6 +26,12 @@
     <dependency>
       <groupId>org.apache.camel.springboot</groupId>
       <artifactId>camel-spring-boot-starter</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.7.1</version>
     </dependency>
 
   </dependencies>

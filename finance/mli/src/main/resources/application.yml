@@ -1,0 +1,13 @@
+logging:
+  file: finance-mli.log
+
+spring:
+  profile: general
+
+name: general-profile
+environment: general
+
+camel:
+  springboot:
+    name: GosFinanceMerrillLynch
+    mainRunController: true
