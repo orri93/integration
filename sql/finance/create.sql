@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS public.ml
     settlement_date date NOT NULL,
     description character varying(64) NOT NULL,
     action character varying(32) NOT NULL,
-    symbol character varying(8) NULL,
+    symbol character varying(16) NULL,
     quantity numeric(15,2) NULL,
     price numeric(15,2) NULL,
     amount numeric(15,2) NOT NULL,
