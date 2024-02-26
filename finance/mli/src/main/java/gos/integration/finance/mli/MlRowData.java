@@ -136,7 +136,11 @@ public class MlRowData {
         mlRowData.settlementDate = parseDate(settlementDateText);
       }
       if (columnMap.containsKey(Column.DESCRIPTION)) {
-        mlRowData.description = cells[columnMap.get(Column.DESCRIPTION)].replace("\"", "").strip();
+        String descriptionText = cells[columnMap.get(Column.DESCRIPTION)].replace("\"", "").strip();
+        if (descriptionText.length() > 32) {
+          descriptionText = descriptionText.substring(0, 32);
+        }
+        mlRowData.description = descriptionText;
       }
       if (columnMap.containsKey(Column.SYMBOL)) {
         mlRowData.symbol = cells[columnMap.get(Column.SYMBOL)].replace("\"", "").strip();

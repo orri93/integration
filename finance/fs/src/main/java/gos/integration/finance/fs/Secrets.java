@@ -1,0 +1,44 @@
+package gos.integration.finance.fs;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@Configuration
+@PropertySource("classpath:secrets.properties")
+public class Secrets {
+  @Value("${finance.database.url}")
+  private String url;
+
+  @Value("${finance.database.username}")
+  private String username;
+
+  @Value("${finance.database.password}")
+  private String password;
+
+  @Value("${alphavantage.url}")
+  private String alphaVantageUrl;
+
+  @Value("${alphavantage.apikey}")
+  private String alphaVantageApiKey;
+
+  public String getUrl() {
+    return url;
+  }
+
+  public String getUsername() {
+    return username;
+  }
+
+  public String getPassword() {
+    return password;
+  }
+
+  public String getAlphaVantageUrl() {
+    return alphaVantageUrl;
+  }
+
+  public String getAlphaVantageApiKey() {
+    return alphaVantageApiKey;
+  }
+}
