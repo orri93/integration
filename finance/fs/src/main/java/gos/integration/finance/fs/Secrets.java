@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:secrets.properties")
+@PropertySource(value = "classpath:secrets.properties")
 public class Secrets {
   @Value("${finance.database.url}")
   private String url;
