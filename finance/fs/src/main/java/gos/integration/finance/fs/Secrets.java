@@ -22,6 +22,12 @@ public class Secrets {
   @Value("${alphavantage.apikey}")
   private String alphaVantageApiKey;
 
+  @Value("${finnhub.url}")
+  private String finnhubUrl;
+
+  @Value("${finnhub.apikey}")
+  private String finnhubApiKey;
+
   public String getUrl() {
     return url;
   }
@@ -40,5 +46,13 @@ public class Secrets {
 
   public String getAlphaVantageApiKey() {
     return alphaVantageApiKey;
+  }
+
+  public String getFinnhubUrl() {
+    return finnhubUrl;
+  }
+
+  public String getFinnhubApiKey() {
+    return finnhubApiKey;
   }
 }

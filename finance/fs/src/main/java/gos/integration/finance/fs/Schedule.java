@@ -14,21 +14,32 @@ public class Schedule {
   private static final Logger Log = LoggerFactory.getLogger(Schedule.class);
 
   @Autowired
+  @Qualifier("status")
+  private SingletonData.Status status;
+
+  @Autowired
   @Qualifier("mlSymbolInformation")
   private SingletonData.MlSymbolInformation symbolInformation;
+
+  @Autowired
+  private BusinessLogic businessLogic;
 
   @Autowired
   private MlDataBase mlDataBase;
 
   @Autowired
-  private AlphaVantage alphaVantage;
+  private Finnhub finnhub;
 
-  @Scheduled(fixedRate = 5000)
+  @Scheduled(fixedRate = 4000)
   public void scheduleTaskWithFixedRate() {
+    MarketStatus marketStatus = finnhub.queryMarketStatus();
+    status.setMarketStatus(marketStatus);
+
     List<String> purchasedSymbols = mlDataBase.queryPurchasedSymbols();
-    symbolInformation.applySymbols(purchasedSymbols);
+    List<String> filteredSymbols = businessLogic.symbolsExclusions(purchasedSymbols);
+    symbolInformation.applySymbols(filteredSymbols);
     String symbol = symbolInformation.nextSymbol();
-    GlobalQuoteValue quote = alphaVantage.queryGlobalQuote(symbol);
-    symbolInformation.updateQuoteValue(symbol, quote);
+    QuoteValue quoteValue = finnhub.queryQuote(symbol);
+    symbolInformation.updateQuoteValue(symbol, quoteValue);
   }
 }

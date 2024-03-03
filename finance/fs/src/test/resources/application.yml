@@ -1,5 +1,6 @@
 gos:
   finance:
+    test: "testing"
     business-logic:
       symbol-exclusions:
         - "CS"

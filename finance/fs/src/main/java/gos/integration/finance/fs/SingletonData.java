@@ -15,19 +15,59 @@ import org.springframework.stereotype.Component;
 @Component
 public final class SingletonData {
 
+  static class Status {
+    private final Lock marketStatusLock = new ReentrantLock();
+    private MarketStatus marketStatus;
+
+    public Status() {
+      this.marketStatus = null;
+    }
+
+    public MarketStatus getMarketStatus() {
+      try {
+        marketStatusLock.lock();
+        return marketStatus;
+      } finally {
+        marketStatusLock.unlock();
+      }
+    }
+
+    public void setMarketStatus(MarketStatus marketStatus) {
+      try {
+        marketStatusLock.lock();
+        this.marketStatus = marketStatus;
+      } finally {
+        marketStatusLock.unlock();
+      }
+    }
+  }
+
   // This class is a singleton and is used to store the symbol information
   static class MlSymbolInformation {
     private final Lock quoteValueMapLock = new ReentrantLock();
     private List<String> symbolList = null;
-    private Map<String, GlobalQuoteValue> quoteValueMap;
+    private Map<String, QuoteValue> quoteValueMap;
     private int symbolIndex = -1;
 
     public MlSymbolInformation() {
       this.quoteValueMap = new HashMap<>();
     }
 
-    public boolean isSymbolListDefined() {
-      return symbolList != null;
+    public List<String> getSymbolList() {
+      return symbolList;
+    }
+
+    public QuoteValue getQuoteValue(String symbol) {
+      try {
+        quoteValueMapLock.lock();
+        if (quoteValueMap.containsKey(symbol)) {
+          return quoteValueMap.get(symbol);
+        } else {
+          return null;
+        }
+      } finally {
+        quoteValueMapLock.unlock();
+      }
     }
 
     public boolean applySymbols(List<String> symbols) {
@@ -67,7 +107,7 @@ public final class SingletonData {
       }
     }
 
-    public void updateQuoteValue(String symbol, GlobalQuoteValue quoteValue) {
+    public void updateQuoteValue(String symbol, QuoteValue quoteValue) {
       try {
         quoteValueMapLock.lock();
         quoteValueMap.put(symbol, quoteValue);
@@ -92,9 +132,15 @@ public final class SingletonData {
     }
   }
 
-   @Bean
-   @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
-   public MlSymbolInformation mlSymbolInformation() {
-     return new MlSymbolInformation();
-   }
+  @Bean
+  @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
+  public Status status() {
+    return new Status();
+  }
+
+  @Bean
+  @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
+  public MlSymbolInformation mlSymbolInformation() {
+    return new MlSymbolInformation();
+  }
 }
