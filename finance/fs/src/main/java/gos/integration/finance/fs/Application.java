@@ -15,6 +15,8 @@ public class Application {
 
   public static void main(String[] args) {
     Log.info("Starting Finance Integration Service");
+    //String userDir = System.getProperty("user.dir");
+    //Log.info("User directory: " + userDir);
     SpringApplication.run(Application.class, args);
   }
 }

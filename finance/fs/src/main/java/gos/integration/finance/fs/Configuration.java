@@ -21,10 +21,19 @@ public class Configuration {
     }
   }
 
+  private String secrets;
   private BusinessLogic businessLogic;
+
+  public String getSecrets() {
+    return secrets;
+  }
 
   public BusinessLogic getBusinessLogic() {
     return businessLogic;
+  }
+
+  public void setSecrets(String secrets) {
+    this.secrets = secrets;
   }
 
   public void setBusinessLogic(BusinessLogic businessLogic) {

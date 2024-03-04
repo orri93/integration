@@ -1,5 +1,6 @@
 gos:
   finance:
+    secrets: fs/src/main/resources/secrets.properties
     business-logic:
       symbol-exclusions:
         - "CS"

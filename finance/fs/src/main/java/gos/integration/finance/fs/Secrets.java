@@ -1,58 +1,60 @@
 package gos.integration.finance.fs;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
-@Configuration
-@PropertySource("secrets.properties")
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+
+@Component
 public class Secrets {
-  @Value("${finance.database.url}")
-  private String url;
+  private static Properties properties;
 
-  @Value("${finance.database.username}")
-  private String username;
-
-  @Value("${finance.database.password}")
-  private String password;
-
-  @Value("${alphavantage.url}")
-  private String alphaVantageUrl;
-
-  @Value("${alphavantage.apikey}")
-  private String alphaVantageApiKey;
-
-  @Value("${finnhub.url}")
-  private String finnhubUrl;
-
-  @Value("${finnhub.apikey}")
-  private String finnhubApiKey;
+  @Autowired
+  private Configuration configuration;
 
   public String getUrl() {
-    return url;
+    return properties.getProperty("finance.database.url");
   }
 
   public String getUsername() {
-    return username;
+    return properties.getProperty("finance.database.username");
   }
 
   public String getPassword() {
-    return password;
+    return properties.getProperty("finance.database.password");
   }
 
   public String getAlphaVantageUrl() {
-    return alphaVantageUrl;
+    return properties.getProperty("alphavantage.url");
   }
 
   public String getAlphaVantageApiKey() {
-    return alphaVantageApiKey;
+    return properties.getProperty("alphavantage.apikey");
   }
 
   public String getFinnhubUrl() {
-    return finnhubUrl;
+    return properties.getProperty("finnhub.url");
   }
 
   public String getFinnhubApiKey() {
-    return finnhubApiKey;
+    return properties.getProperty("finnhub.apikey");
+  }
+
+  @PostConstruct
+  private void init() throws IOException {
+    if (properties == null) {
+      loadProperties(configuration.getSecrets());
+    }
+  }
+
+  private static void loadProperties(String fileName) throws IOException {
+    FileInputStream fis = new FileInputStream(fileName);
+    properties = new Properties();
+    properties.load(fis);
+    fis.close();
   }
 }
